@@ -26,7 +26,10 @@ export const listFilesCaptureResponse: {
     const entries = [...Array(count)].map((value, index) => ({
       dateTime: '2015:07:10 11:05:18',
       _favorite: false,
-      fileUrl: `${proto}://${host}/files/100RICOH/R00${10001 + index}.JPG`,
+      fileUrl: `https://www.dropbox.com/s/b4rl9y0kcfgfpq9/R00${
+        10001 + index
+      }.JPG?raw=1`,      
+      // fileUrl: `${proto}://${host}/files/100RICOH/R00${10001 + index}.JPG`,
       isProcessed: true,
       name: `R00${10001 + index}.JPG`,
       previewUrl: '',
