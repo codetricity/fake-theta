@@ -26,39 +26,9 @@ export const listFilesCaptureResponse: {
     const entries = [...Array(count)].map((value, index) => ({
       dateTime: '2015:07:10 11:05:18',
       _favorite: false,
-      fileUrl: `${proto}://${host}/files/100RICOH/R00${10001 + index}.JPG`,
-      isProcessed: true,
-      name: `R00${10001 + index}.JPG`,
-      previewUrl: '',
-      size: 4051440,
-    }));
-
-    return {
-      results: {
-        entries,
-        totalEntries: 10,
-      },
-      name,
-      state: 'done',
-    };
-  },
-  opp: (proto, host, fileType, entryCount, maxThumbSize, name) => {
-    if (fileType === 'video') {
-      return {
-        results: {
-          entries: [],
-          totalEntries: 0,
-        },
-        name,
-        state: 'done',
-      };
-    }
-
-    const count = entryCount <= 10 ? entryCount : 10;
-    const entries = [...Array(count)].map((value, index) => ({
-      dateTime: '2023:04:24 11:05:18',
-      _favorite: false,
-      fileUrl: `https://www.dropbox.com/s/b4rl9y0kcfgfpq9/R00${10001 + index}.JPG?raw=1`, 
+      fileUrl: `https://www.dropbox.com/s/b4rl9y0kcfgfpq9/R00${
+        10001 + index
+      }.JPG?raw=1`,
       // fileUrl: `${proto}://${host}/files/100RICOH/R00${10001 + index}.JPG`,
       isProcessed: true,
       name: `R00${10001 + index}.JPG`,
@@ -74,7 +44,8 @@ export const listFilesCaptureResponse: {
       name,
       state: 'done',
     };
-  },  
+  },
+
   z1: (proto, host, fileType, entryCount, maxThumbSize, name) => {
     if (fileType === 'video') {
       return {

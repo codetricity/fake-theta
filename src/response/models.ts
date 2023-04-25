@@ -1,7 +1,7 @@
 import { VercelRequest } from '@vercel/node';
 import { modelHeader } from './config-headers';
 
-const modelsArray = ['x', 'z1', 'opp'] as const;
+const modelsArray = ['x', 'z1'] as const;
 const defaultModel = 'x';
 export type models = (typeof modelsArray)[number];
 export function getModel(req: VercelRequest): models | undefined {
