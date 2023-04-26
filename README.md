@@ -1,4 +1,4 @@
-# Fake THETA
+# Fake THETA - Oppkey fork
 
 Fake THETA is a program that simulates [RICOH THETA Web APIs](https://github.com/ricohapi/theta-api-specs).
 It can be used for testing applications that work with THETA Web APIs.
@@ -7,6 +7,52 @@ Fake THETA supports the following models of THETA:
 
 - THETA X
 - THETA Z1
+
+## Modifications by Oppkey
+
+The API endpoint for the Oppkey API simulation server is: [https://fake-theta-alpha.vercel.app]( https://fake-theta-alpha.vercel.app)
+
+`camera.listFiles` and `state` are modified to show RICOH THETA X sample images. File name are R0010001 through R0010015.
+
+### Request listFiles example
+
+```javascript
+{
+  "name": "camera.listFiles", 
+  "parameters": {
+    "fileType": "image",
+    "entryCount": 10,
+    "maxThumbSize": 0
+  }
+}
+```
+
+### Example output of listFiles
+
+```javascript
+{
+"results": {
+  "entries": [
+    {
+      "dateTime": "2015:07:10 11:05:18",
+      "_favorite": false,
+      "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010001.JPG",
+      "isProcessed": true,
+      "name": "R0010001.JPG",
+      "previewUrl": "",
+      "size": 4051440
+    },
+    {
+      "dateTime": "2015:07:10 11:05:18",
+      "_favorite": false,
+      "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010002.JPG",
+      "isProcessed": true,
+      "name": "R0010002.JPG",
+      "previewUrl": "",
+      "size": 4051440
+    },
+...
+```
 
 ## Features
 
@@ -53,10 +99,10 @@ Please note that Fake THETA returns a JPEG file with `content-type:image/jpeg` w
 - [camera.stopCapture](https://github.com/ricohapi/theta-api-specs/blob/main/theta-web-api-v2.1/commands/camera.stop_capture.md)
 - [camera.takePicture](https://github.com/ricohapi/theta-api-specs/blob/main/theta-web-api-v2.1/commands/camera.take_picture.md)
 
-## Usage
+## Usage for Oppkey Version
 
 Fake THETA is implemented as vercel serverless functions deployed on "fake-theta.vercel.app".
-You can get the fake responses of RICOH THETA web APIs by setting https://fake-theta.vercel.app
+You can get the fake responses of RICOH THETA web APIs by setting https://fake-theta-alpha.vercel.app
 as an endpoint.
 
 In order to specify the model, you can add a header parameter `emulating-theta-model` when sending a Request. If nothing is specified, Fake THETA behaves as THETA X.
