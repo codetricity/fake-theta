@@ -22,7 +22,7 @@ export const listFilesCaptureResponse: {
       };
     }
 
-    const count = entryCount <= 10 ? entryCount : 10;
+    const count = entryCount <= 16 ? entryCount : 16;
     const entries = [...Array(count)].map((value, index) => ({
       dateTime: '2023:04:26 11:05:18',
       _favorite: false,
