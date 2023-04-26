@@ -24,7 +24,7 @@ export const listFilesCaptureResponse: {
 
     const count = entryCount <= 10 ? entryCount : 10;
     const entries = [...Array(count)].map((value, index) => ({
-      dateTime: '2015:07:10 11:05:18',
+      dateTime: '2023:04:26 11:05:18',
       _favorite: false,
       fileUrl: `https://codetricity.github.io/fake-storage/files/100RICOH/R00${
         10001 + index
@@ -33,13 +33,13 @@ export const listFilesCaptureResponse: {
       isProcessed: true,
       name: `R00${10001 + index}.JPG`,
       previewUrl: '',
-      size: 4051440,
+      size: 11051440,
     }));
 
     return {
       results: {
         entries,
-        totalEntries: 10,
+        totalEntries: 15,
       },
       name,
       state: 'done',
