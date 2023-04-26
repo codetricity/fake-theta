@@ -22,7 +22,8 @@ export const listFilesCaptureResponse: {
       };
     }
 
-    const count = entryCount <= 16 ? entryCount : 16;
+    const filesInStorage = 16;
+    const count = entryCount <= filesInStorage ? entryCount : filesInStorage;
     const entries = [...Array(count)].map((value, index) => ({
       dateTime: '2023:04:26 11:05:18',
       _favorite: false,
@@ -39,7 +40,7 @@ export const listFilesCaptureResponse: {
     return {
       results: {
         entries,
-        totalEntries: 15,
+        totalEntries: filesInStorage,
       },
       name,
       state: 'done',
