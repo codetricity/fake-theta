@@ -1,6 +1,6 @@
 # Fake THETA - Oppkey fork
 
-Fake THETA is a program that simulates [RICOH THETA Web APIs](https://github.com/ricohapi/theta-api-specs).
+Fake THETA is a [RICOH THETA Web APIs](https://github.com/ricohapi/theta-api-specs) simulator.
 It can be used for testing applications that work with THETA Web APIs.
 You can switch from which model you get the responses of web APIs.
 Fake THETA supports the following models of THETA:
@@ -105,6 +105,8 @@ Fake THETA is implemented as vercel serverless functions deployed on "fake-theta
 You can get the fake responses of RICOH THETA web APIs by setting https://fake-theta-alpha.vercel.app
 as an endpoint.
 
+***Note: "fake-theta.vercel.app" is an endpoint deployed from the master branch of this repository, so its behavior may change when the master branch is updated.***
+
 In order to specify the model, you can add a header parameter `emulating-theta-model` when sending a Request. If nothing is specified, Fake THETA behaves as THETA X.
 
 Fake THETA only supports required parameters for each command execution. For example, for the [listFiles](https://github.com/ricohapi/theta-api-specs/blob/main/theta-web-api-v2.1/commands/camera.list_files.md) command, Fake THETA only reads the values of `fileType`, `entryCount`, and `maxThumbSize`.
@@ -189,12 +191,12 @@ Non-required parameters are ignored in the current implementation (treated as if
   > ~/R0010015.JPG
   ```
 
-## To Do
+## TODO
 
-- [ ] Support dynamic responses simulation according to internal states of the camera.
-- [ ] Support completely-reproduced error responses for each model.
-- [ ] Add parameter validation of APIs.
-- [ ] Support non-required parameters for each command.
+- [ ] Support dynamic responses simulation according to internal states of the camera
+- [ ] Support completely-reproduced error responses for each model
+- [ ] Add parameter validation of APIs
+- [ ] Support non-required parameters for each command
 
 ## License
 
