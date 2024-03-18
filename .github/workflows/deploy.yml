@@ -1,0 +1,24 @@
+name: test on deploy
+on: deployment_status
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.deployment.environment }}
+    steps:
+      - name: check deployment state
+        run: test ${{ github.event.deployment_status.state }} == "success"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: get url
+        run: |
+          if [[ "${{ vars.TARGET_URL }}" != "" ]]; then
+            echo "TARGET_URL=${{ vars.TARGET_URL }}" >> $GITHUB_ENV
+          else
+            echo "TARGET_URL=${{ github.event.deployment_status.target_url }}" >> $GITHUB_ENV
+          fi
+      - name: yarn install
+        run: yarn install
+      - name: run test
+        run: TEST_HOST="$TARGET_URL" yarn test

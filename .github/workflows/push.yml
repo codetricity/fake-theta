@@ -1,0 +1,17 @@
+name: static analysis on push
+on: push
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: yarn install
+        run: yarn install
+      - name: run lint and type-check
+        run: |
+          yarn format:check
+          yarn lint
+          yarn type-check

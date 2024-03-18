@@ -1,6 +1,6 @@
 import { models } from './models';
 
-export const options: { [key in models]: { [key: string]: unknown } } = {
+export const options: Record<models, Record<string, unknown>> = {
   x: {
     _aiAutoThumbnail: 'OFF',
     _aiAutoThumbnailSupport: ['ON', 'OFF'],
@@ -9,14 +9,14 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
       _bracketParameters: [
         {
           _colorTemperature: 5000,
-          exposureCompensation: 0,
+          exposureCompensation: 0.0,
           exposureProgram: 1,
           iso: 400,
           shutterSpeed: 0.004,
         },
         {
           _colorTemperature: 5000,
-          exposureCompensation: 0,
+          exposureCompensation: 0.0,
           exposureProgram: 1,
           iso: 400,
           shutterSpeed: 0.004,
@@ -41,6 +41,10 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
       maxTemperature: 10000,
       minTemperature: 2500,
       stepSize: 100,
+    },
+    _ethernetConfig: {
+      ipAddressAllocation: 'dynamic',
+      _proxy: { use: false, url: '', port: 0 },
     },
     _faceDetect: 'OFF',
     _faceDetectSupport: ['ON', 'OFF'],
@@ -85,6 +89,12 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
     _networkTypeSupport: ['AP', 'CL'],
     _powerSaving: 'ON',
     _powerSavingSupport: ['ON', 'OFF'],
+    _proxy: {
+      use: true,
+      url: '192.168.1.250',
+      port: 8080,
+      userid: 'example_user',
+    },
     _shootingMethod: 'normal',
     _shootingMethodSupport: [
       'normal',
@@ -177,7 +187,7 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
     },
     dateTimeZone: '2015:07:10 11:05:18+09:00',
     exposureCompensation: 0,
-    exposureCompensationSupport: [0],
+    exposureCompensationSupport: [0.0],
     exposureDelay: 0,
     exposureDelaySupport: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     exposureProgram: 1,
@@ -262,16 +272,6 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
     previewFormatSupport: [
       {
         framerate: 30,
-        height: 2880,
-        width: 5760,
-      },
-      {
-        framerate: 30,
-        height: 1920,
-        width: 3840,
-      },
-      {
-        framerate: 30,
         height: 512,
         width: 1024,
       },
@@ -322,7 +322,7 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
         {
           _colorTemperature: 5000,
           aperture: 2.1,
-          exposureCompensation: 0,
+          exposureCompensation: 0.0,
           exposureProgram: 1,
           iso: 400,
           shutterSpeed: 0.004,
@@ -331,7 +331,7 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
         {
           _colorTemperature: 5000,
           aperture: 2.1,
-          exposureCompensation: 0,
+          exposureCompensation: 0.0,
           exposureProgram: 1,
           iso: 400,
           shutterSpeed: 0.004,
@@ -415,6 +415,12 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
     _microphoneSupport: ['AUTO', 'Internal'],
     _networkType: 'AP',
     _networkTypeSupport: ['AP', 'CL'],
+    _proxy: {
+      port: 8080,
+      url: '192.168.1.250',
+      use: true,
+      userid: 'example_user',
+    },
     _shootingMethodSupport: [],
     _shutterVolume: 100,
     _shutterVolumeSupport: {
@@ -470,8 +476,8 @@ export const options: { [key in models]: { [key: string]: unknown } } = {
     },
     clientVersion: 2,
     dateTimeZone: '2015:07:10 11:05:18+09:00',
-    exposureCompensation: 0,
-    exposureCompensationSupport: [0],
+    exposureCompensation: 0.0,
+    exposureCompensationSupport: [0.0],
     exposureDelay: 0,
     exposureDelaySupport: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     exposureProgram: 1,

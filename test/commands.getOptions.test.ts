@@ -20,6 +20,7 @@ describe('POST /osc/commands/execute getOptions', () => {
             '_cameraControlSource',
             '_cameraMode',
             '_colorTemperature',
+            '_ethernetConfig',
             '_faceDetect',
             '_filter',
             '_function',
@@ -33,6 +34,7 @@ describe('POST /osc/commands/execute getOptions', () => {
             '_microphoneChannel',
             '_networkType',
             '_powerSaving',
+            '_proxy',
             '_shootingMethod',
             '_shutterVolume',
             '_timeShift',
@@ -113,7 +115,7 @@ describe('POST /osc/commands/execute getOptions', () => {
         },
       })
       .expect(200);
-    expect(res.body.results.options).toMatchSnapshot();
+    expect(res.body).toMatchSnapshot();
   });
 
   it('should respond missingParameterError', async () => {
@@ -153,6 +155,7 @@ describe('THETA X POST /osc/commands/execute getOptions', () => {
             '_cameraControlSource',
             '_cameraMode',
             '_colorTemperature',
+            '_ethernetConfig',
             '_faceDetect',
             '_filter',
             '_function',
@@ -166,6 +169,7 @@ describe('THETA X POST /osc/commands/execute getOptions', () => {
             '_microphoneChannel',
             '_networkType',
             '_powerSaving',
+            '_proxy',
             '_shootingMethod',
             '_shutterVolume',
             '_timeShift',
@@ -247,7 +251,7 @@ describe('THETA X POST /osc/commands/execute getOptions', () => {
       })
       .set('emulating-theta-model', 'x')
       .expect(200);
-    expect(res.body.results.options).toMatchSnapshot();
+    expect(res.body).toMatchSnapshot();
   });
 
   it('should respond missingParameterError', async () => {
@@ -301,6 +305,7 @@ describe('THETA Z1 POST /osc/commands/execute getOptions', () => {
             '_microphone',
             '_microphoneChannel',
             '_networkType',
+            '_proxy',
             //'_shootingMethod', // Only available in my setting mode.
             '_shutterVolume',
             '_timeShift',
@@ -377,7 +382,7 @@ describe('THETA Z1 POST /osc/commands/execute getOptions', () => {
       })
       .set('emulating-theta-model', 'z1')
       .expect(200);
-    expect(res.body.results.options).toMatchSnapshot();
+    expect(res.body).toMatchSnapshot();
   });
 
   it('should respond missingParameterError', async () => {
