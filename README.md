@@ -10,7 +10,7 @@ Fake THETA supports the following models of THETA:
 
 ## Modifications by Oppkey
 
-The API endpoint for the Oppkey API simulation server is: [https://fake-theta-alpha.vercel.app]( https://fake-theta-alpha.vercel.app)
+The API endpoint for the Oppkey API simulation server is: [https://fake-theta-alpha.vercel.app](https://fake-theta-alpha.vercel.app)
 
 `camera.listFiles` and `state` are modified to show RICOH THETA X sample images. File name are R0010001 through R0010015.
 
@@ -18,7 +18,7 @@ The API endpoint for the Oppkey API simulation server is: [https://fake-theta-al
 
 ```json
 {
-  "name": "camera.listFiles", 
+  "name": "camera.listFiles",
   "parameters": {
     "fileType": "image",
     "entryCount": 10,
