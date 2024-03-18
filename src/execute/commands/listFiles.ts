@@ -125,7 +125,7 @@ const response = {
       name,
       results: {
         entries,
-        totalEntries: 16,
+        totalEntries: 10,
       },
       state: 'done',
     };
