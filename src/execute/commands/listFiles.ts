@@ -67,7 +67,7 @@ const response = {
     return {
       results: {
         entries,
-        totalEntries: 16,
+        totalEntries: 10,
       },
       name,
       state: 'done',
