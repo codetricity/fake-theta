@@ -32,25 +32,28 @@ The API endpoint for the Oppkey API simulation server is: [https://fake-theta-al
 ```javascript
 {
 "results": {
-  "entries": [
-    {
-      "dateTime": "2015:07:10 11:05:18",
-      "_favorite": false,
-      "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010001.JPG",
-      "isProcessed": true,
-      "name": "R0010001.JPG",
-      "previewUrl": "",
-      "size": 4051440
-    },
-    {
-      "dateTime": "2015:07:10 11:05:18",
-      "_favorite": false,
-      "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010002.JPG",
-      "isProcessed": true,
-      "name": "R0010002.JPG",
-      "previewUrl": "",
-      "size": 4051440
-    },
+    "entries": [
+      {
+        "dateTime": "2015:07:10 11:05:18",
+        "_favorite": false,
+        "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010001.JPG",
+        "isProcessed": true,
+        "name": "R0010001.JPG",
+        "previewUrl": "",
+        "size": 4051440
+      },
+      {
+        "dateTime": "2015:07:10 11:05:18",
+        "_favorite": false,
+        "fileUrl": "https://codetricity.github.io/fake-storage/files/100RICOH/R0010002.JPG",
+        "isProcessed": true,
+        "name": "R0010002.JPG",
+        "previewUrl": "",
+        "size": 4051440
+      },
+    ]
+  }
+}
 ...
 ```
 
