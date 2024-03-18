@@ -16,7 +16,7 @@ The API endpoint for the Oppkey API simulation server is: [https://fake-theta-al
 
 ### Request listFiles example
 
-```javascript
+```json
 {
   "name": "camera.listFiles", 
   "parameters": {
@@ -29,7 +29,7 @@ The API endpoint for the Oppkey API simulation server is: [https://fake-theta-al
 
 ### Example output of listFiles
 
-```javascript
+```json
 {
 "results": {
     "entries": [
