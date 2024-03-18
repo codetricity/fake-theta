@@ -49,13 +49,9 @@ const response = {
 
       return {
         _favorite: false,
-        fileUrl:
-          proto +
-          '://' +
-          host +
-          `/files/150100525831424d42075b53ce68c300/100RICOH/R00${
-            10010 - index
-          }.JPG`,
+        fileUrl: `https://codetricity.github.io/fake-storage/files/100RICOH/R00${
+          10001 + index
+        }.JPG`,
         isProcessed: true,
         name: `R00${10010 - index}.JPG`,
         previewUrl: '',
@@ -129,7 +125,7 @@ const response = {
       name,
       results: {
         entries,
-        totalEntries: 10,
+        totalEntries: 16,
       },
       state: 'done',
     };
